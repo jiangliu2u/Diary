@@ -1,10 +1,10 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
-    User = require('User');
+    Schema = mongoose.Schema;
 
 var DialogSchema = new Schema({
     username: {type: String},
     content: {type: String},
     post_time: {type: String}
 });
-module.exports = mongoose.model('Dialog', DialogSchema);
+
+module.exports = DialogSchema;
