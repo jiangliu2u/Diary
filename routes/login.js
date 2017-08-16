@@ -3,7 +3,7 @@ var router = express.Router();
 var model=require('../models/db');
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('register');
+    res.render('login');
 });
 
 
@@ -15,18 +15,16 @@ router.post('/', function (req, res) {
         username: req.body.username,
         password: req.body.password
     };
-    var u=model.user(data);
-    u.save(function (err,docs) {
-        if(err){
-            
-        }
-        res.redirect('/');
+    model.user.find({'username':data.username,'password':data.password},function (err,docs) {
+       if(err){
+           res.redirect('/')
+       }else {
+           console.log(docs);
+           req.session.user=docs[0].username;
+           req.session.UserID=docs[0]._id;
+           res.redirect('/users')
+       }
     });
-    
-
-
-
-
 
 });
 module.exports = router;

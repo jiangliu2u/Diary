@@ -33,4 +33,4 @@ mongoose.connection.on('disconnected', function () {
     console.log('Mongoose connection disconnected');
 });
 
-module.exports = mongoose;
+module.exports = obj;
