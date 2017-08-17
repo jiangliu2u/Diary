@@ -11,7 +11,7 @@ var users = require('./routes/users');
 var reg=require('./routes/reg');
 var login=require('./routes/login');
 var MongoStore=require('connect-mongo')(session);
-
+var flash=require('connect-flash');
 var app = express();
 
 // view engine setup
@@ -24,6 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 mongoose.connect("mongodb://localhost:27017/dialog");
 app.use(session({
@@ -40,6 +41,15 @@ app.use('/users', users);
 app.use('/reg',reg);
 app.use('/login',login);
 
+
+app.use(function(req, res, next){
+    console.log("app.usr local");
+    res.locals.user = req.session.user;
+    res.locals.post = req.session.post;
+    res.locals.error = req.flash('error');
+    res.locals.success = req.flash(success);
+    next();
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
