@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var DB_URL = 'mongodb://localhost:27017/dialog';
-mongoose.Promise = global.Promise;
+var Promise = require('bluebird');
 /**
  * 连接
  */
@@ -12,6 +12,13 @@ var obj = {};
 
 obj.user = mongoose.model("User", userSchema);
 obj.dialog = mongoose.model("Dialog", dialogSchema);
+
+Promise.promisifyAll(obj.user);
+Promise.promisifyAll(obj.dialog);
+
+
+
+
 /**
  * 连接成功
  */

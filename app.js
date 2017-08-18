@@ -12,6 +12,7 @@ var reg=require('./routes/reg');
 var login=require('./routes/login');
 var MongoStore=require('connect-mongo')(session);
 var flash=require('connect-flash');
+var ba=require('babel-core');
 var app = express();
 
 // view engine setup
@@ -30,7 +31,7 @@ mongoose.connect("mongodb://localhost:27017/dialog");
 app.use(session({
     secret:'jiangliu',
     cookie:{
-        maxAge:300*1000
+        maxAge:15*60*60*24*1000
     },
     store:new MongoStore({mongooseConnection:mongoose.connection}),
     resave:true,
