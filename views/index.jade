@@ -15,15 +15,14 @@ block content
                                 button.btn.btn-success 发表
                 div.col-lg-2
         br
-        br
         div.row
             div.col-lg-1
                 div
             div.col-lg-9
                 -var a = posts
                     each i in a
-                        p=i.username
-                        p=i.content
-                        p=i.post_time
+                        h4=i.username+' 说:'
+                        h4=i.content
+                        small=i.post_time
             div.col-lg-2
                 div
