@@ -20,7 +20,7 @@ router.post('/', function (req, res) {
         if (err) {
 
         }
-        res.redirect('/');
+        res.redirect('/login');
     });
 });
 module.exports = router;
