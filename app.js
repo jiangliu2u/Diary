@@ -41,7 +41,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/reg', reg);
 app.use('/login', login);
-app.user('/logout', logout);
+app.use('/logout', logout);
 
 app.use(function (req, res, next) {
     console.log("app.usr local");

@@ -21,8 +21,9 @@ block content
             div.col-lg-9
                 -var a = posts
                     each i in a
-                        h4=i.username+' 说:'
-                        h4=i.content
-                        small=i.post_time
+                        div(style="margin:20px")
+                            h5(style="margin-bottom:5px")=i.username+' 说:'
+                            p(style="margin:0px")=i.content
+                            small(style="color:#888;margin-top:0px")=i.post_time
             div.col-lg-2
                 div

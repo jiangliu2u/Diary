@@ -31,7 +31,7 @@ router.post('/', function (req, res) {//发表一篇日记
     const posts = {
         username: req.session.user.username,
         content: req.body.content,
-        post_time: new Date().getDay()
+        post_time: (date.getMonth()+1) + '月' + date.getDate() + '日' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
     };
     const p = model.dialog(posts);
     p.save(function (err, docs) {
