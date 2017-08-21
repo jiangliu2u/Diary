@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
-const DB_URL = 'mongodb://localhost:27017/dialog';
-const Promise = require('bluebird');
+var mongoose = require('mongoose');
+var DB_URL = 'mongodb://localhost:27017/dialog';
+var Promise = require('bluebird');
 /**
  * 连接
  */
-const userSchema = require('./User');
-const dialogSchema = require('./Dialog');
-const db = mongoose.connect(DB_URL);
+var userSchema = require('./User');
+var dialogSchema = require('./Dialog');
+var db = mongoose.connect(DB_URL);
 
-const obj = {};
+var obj = {};
 
 obj.user = mongoose.model("User", userSchema);
 obj.dialog = mongoose.model("Dialog", dialogSchema);

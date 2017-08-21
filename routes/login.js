@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var model = require('../models/db');
+const express = require('express');
+const router = express.Router();
+const model = require('../models/db');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('login');
@@ -11,7 +11,7 @@ router.post('/', function (req, res) {
     // if (User.find({username: req.body.username})) {
     //     res.render('error');
     // }
-    var data = {
+    let data = {
         username: req.body.username,
         password: req.body.password
     };
