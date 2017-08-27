@@ -11,6 +11,7 @@ const users = require('./routes/users');
 const reg = require('./routes/reg');
 const login = require('./routes/login');
 const logout = require('./routes/logout');
+const api = require('./routes/api');//restful api 以便angular访问
 const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const app = express();
@@ -42,6 +43,7 @@ app.use('/users', users);
 app.use('/reg', reg);
 app.use('/login', login);
 app.use('/logout', logout);
+app.use('/api', api);
 
 app.use(function (req, res, next) {
     console.log("app.usr local");
