@@ -2,25 +2,26 @@ doctype html
 html
     head
         title 首页
+        //meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel='stylesheet', href='/stylesheets/bootstrap.css')
         link(rel='stylesheet', href='/stylesheets/style.css')
         //script(src='/javascripts/jquery.js')
         //script(src='/javascripts/bootstrap.js')
     body
-        nav.navbar.navbar-fixed-top
-            div.container
-                a.navbar-brand 日记
-                ul.nav.navbar-nav
-                    li.active
-                        a(href='/') 首页
-                    - if(!user)
-                        li
-                            a(href='/login') 登录
-                        li
-                            a(href='/reg') 注册
-                    - else
-                        li
-                            a(href='/logout') 退出
+        nav.navbar.navbar-default
+            div.container-fluid
+                div.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li.active
+                            a(href='/') 首页
+                        - if(!user)
+                            li
+                                a(href='/login') 登录
+                            li
+                                a(href='/reg') 注册
+                        - else
+                            li
+                                a(href='/logout') 退出
         div#container.container
             - if (success)
                 div.alert.alert-success
