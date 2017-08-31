@@ -10,6 +10,7 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const reg = require('./routes/reg');
 const login = require('./routes/login');
+const login_api = require('./routes/login_api');
 const logout = require('./routes/logout');
 const api = require('./routes/api');//restful api 以便angular访问
 const MongoStore = require('connect-mongo')(session);
@@ -42,8 +43,10 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/reg', reg);
 app.use('/login', login);
+app.use('/login_api', login_api);
 app.use('/logout', logout);
 app.use('/api', api);
+
 
 app.use(function (req, res, next) {
     console.log("app.usr local");
