@@ -1,6 +1,11 @@
+
+
+
+
 const express = require('express');
 const router = express.Router();
 const model = require('../models/db');
+const Hl=require('../controller/c_login');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('login');
@@ -15,6 +20,8 @@ router.post('/', function (req, res) {
         username: req.body.username,
         password: req.body.password
     };
+
+    Hl.checkUser(data.username);
     model.user.find({'username': data.username}, function (err, user) {
         console.log(user);
         if (!user[0]) {
