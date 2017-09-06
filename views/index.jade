@@ -1,8 +1,6 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
     div.container
         -if(user)
             div.row
@@ -24,9 +22,12 @@ block content
             div.col-lg-7
                 -var a = posts
                     each i in a
-                        div(style="margin:10px")
+                        div(style="background:white;margin:10px")
                             h5(style="margin-bottom:5px")=i.username+' 说:'
-                            p(style="margin:0px")=i.content
-                            small(style="color:#888;margin-top:0px")=i.post_time
+                            p(style="display:block")=i.content
+                            small(style="color:gray")=i.post_time
             div.col-lg-4
+                div
+                    -var date = new Date()
+                    h4='当前时间:' + (date.getMonth() + 1) + "月" + date.getDate() + "日" + date.getHours() + ":" + date.getMinutes()
 
