@@ -3,7 +3,7 @@ extends layout
 block content
     div.container
         -if(user)
-            div.row
+            div(style="margin-top:20px").row
                 div.col-lg-1
                 div.col-lg-7
                     form.form-horizontal(method='post')
@@ -14,18 +14,17 @@ block content
                 div.col-lg-4
                     h3="欢迎回来，" + user.username
                     -var date = new Date()
-                    h4='当前时间:' + (date.getMonth() + 1) + "月" + date.getDate() + "日" + date.getHours() + ":" + date.getMinutes()
         br
         div.row
             div.col-lg-1
                 div
-            div.col-lg-7
+            div.col-lg-7.list-group
                 -var a = posts
                     each i in a
-                        div(style="background:white;margin:10px")
+                        div(style="background:white;margin:10px").list-group-item
                             h5(style="margin-bottom:5px")=i.username+' 说:'
                             p(style="display:block")=i.content
-                            small(style="color:gray")=i.post_time
+                            small(style="color:gray;margin-bottom:0px")=i.post_time
             div.col-lg-4
                 div
                     -var date = new Date()

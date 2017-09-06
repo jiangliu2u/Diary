@@ -17,7 +17,7 @@ router.get('/', function (req, res) {
                 title: "日记",
                 success: req.flash('success').toString(),
                 error: req.flash('error').toString(),
-                posts: post_s
+                posts: post_s.reverse()
             });
         }
     });
