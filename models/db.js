@@ -6,7 +6,7 @@ var Promise = require('bluebird');
  */
 var userSchema = require('./User');
 var dialogSchema = require('./Dialog');
-var db = mongoose.connect(DB_URL);
+var db = mongoose.connect(DB_URL, {useMongoClient: true,});
 
 var obj = {};
 
@@ -15,8 +15,6 @@ obj.dialog = mongoose.model("Dialog", dialogSchema);
 
 Promise.promisifyAll(obj.user);
 Promise.promisifyAll(obj.dialog);
-
-
 
 
 /**

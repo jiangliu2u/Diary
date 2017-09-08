@@ -1,11 +1,12 @@
 extends layout
 
 block content
+    hr
     div.container
         -if(user)
             div(style="margin-top:20px").row
                 div.col-lg-1
-                div.col-lg-7
+                div.col-lg-7.col-xs-12
                     form.form-horizontal(method='post')
                         div.input-group
                             input.form-control(id='content' name="content")
@@ -22,9 +23,9 @@ block content
                 -var a = posts
                     each i in a
                         div(style="background:white;margin:10px").list-group-item
-                            h5(style="margin-bottom:5px")=i.username+' 说:'
-                            p(style="display:block")=i.content
-                            small(style="color:gray;margin-bottom:0px")=i.post_time
+                            h5(style="margin-bottom:8px")=i.username+' 说:'
+                            p(style="text-indent:2em")=i.content
+                            small(style="color:gray;margin-top:0px")=i.post_time
             div.col-lg-4
                 div
                     -var date = new Date()

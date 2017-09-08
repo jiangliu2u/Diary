@@ -6,19 +6,20 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.17.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "jade": "*",
-    "express": "~4.15.2",
-    "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2",
-    "mongodb": "^2.2.30",
-    "mongoose": "^4.11.6",
+    "babel-core": "^6.26.0",
     "bluebird": "^3.5.0",
-    "express-session": "^1.15.5",
-    "connect-mongo": "^1.3.2",
+    "body-parser": "~1.17.1",
     "connect-flash": "^0.1.1",
-    "babel-core": "^6.26.0"
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "~1.4.3",
+    "crypto": "^1.0.1",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "express-session": "^1.15.5",
+    "jade": "*",
+    "mongodb": "^2.2.30",
+    "mongoose": "^4.11.10",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
   }
 }

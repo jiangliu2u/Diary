@@ -10,7 +10,6 @@ router.get('/', function (req, res) {
         if (err) {
             console.log('读取post出错' + err);
         } else {
-            console.log('哈哈哈' + posts);
             post_s = posts;
             res.render('index', {
                 user: req.session.user,

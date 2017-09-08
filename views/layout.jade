@@ -8,8 +8,8 @@ html
         //script(src='/javascripts/jquery.js')
         //script(src='/javascripts/bootstrap.js')
     body
-        nav.navbar.navbar-inverse.navbar-fixed-top
-            div.container-fluid
+        nav.navbar.navbar-fixed-top
+            div.container
                 div.collapse.navbar-collapse
                     ul.nav.navbar-nav
                         li.active
@@ -26,7 +26,7 @@ html
             - if (success)
                 div.alert.alert-success
                     p=success
-            - if (error)
-                div.alert.alert-error
-                    p=error
+            - if (errorss)
+                div.alert.alert-danger
+                    p=errorss
             block content

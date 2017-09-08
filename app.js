@@ -21,19 +21,16 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
-//mongoose.connect("mongodb://localhost:27017/dialog");
 app.use(session({
     secret: 'jiangliu',
     cookie: {
-        maxAge: 15 * 60 * 60 * 24 * 1000
+        maxAge: 15 * 60*1000,//会话状态保持15min
     },
     store: new MongoStore({mongooseConnection: mongoose.connection}),
     resave: true,
@@ -52,8 +49,8 @@ app.use(function (req, res, next) {
     console.log("app.usr local");
     res.locals.user = req.session.user;
     res.locals.post = req.session.post;
-    res.locals.error = req.flash('error');
-    res.locals.success = req.flash(success);
+    res.locals.errorss = req.flash('error');
+    res.locals.success = req.flash('success');
     next();
 });
 // catch 404 and forward to error handler
