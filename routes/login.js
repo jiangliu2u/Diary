@@ -15,9 +15,6 @@ router.get('/', function (req, res, next) {
 
 
 router.post('/', function (req, res) {
-    // if (User.find({username: req.body.username})) {
-    //     res.render('error');
-    // }
     let md5 = crypto.createHash('md5');
     let pwd = md5.update(req.body.password).digest("hex");
     let data = {
@@ -31,7 +28,7 @@ router.post('/', function (req, res) {
             return res.redirect('/login');
         }
 
-        else if (req.body.password != user[0].password) {
+        else if (pwd != user[0].password) {
             req.flash('error', '密码错误');
             return res.redirect('/login');
         }

@@ -6,28 +6,32 @@ block content
         -if(user)
             div(style="margin-top:20px").row
                 div.col-lg-1
-                div.col-lg-7.col-xs-12
+                div.col-lg-7.col-xs-12.col-md-12
                     form.form-horizontal(method='post')
                         div.input-group
                             input.form-control(id='content' name="content")
                             span.input-group-btn
                                 button.btn.btn-success 发表
-                div.col-lg-4
+                div.col-lg-4.col-xs-12.col-md-12
                     h3="欢迎回来，" + user.username
                     -var date = new Date()
         br
         div.row
             div.col-lg-1
                 div
-            div.col-lg-7.list-group
+            div.col-lg-7
                 -var a = posts
                     each i in a
-                        div(style="background:white;margin:10px").list-group-item
-                            h5(style="margin-bottom:8px")=i.username+' 说:'
-                            p(style="text-indent:2em")=i.content
-                            small(style="color:gray;margin-top:0px")=i.post_time
+                        div#diary-info.list-group-item
+                            h5#diary-username=i.username+' 说:'
+                            p#diary-content=i.content
+                            small#diary-time=i.post_time
             div.col-lg-4
                 div
                     -var date = new Date()
+                    img#deshan(src="/img/hyeri.jpg")
                     h4='当前时间:' + (date.getMonth() + 1) + "月" + date.getDate() + "日" + date.getHours() + ":" + date.getMinutes()
 
+    div#footer
+        !='<hr />'
+        p © jiangliu2u 2017 All Rights Reserved

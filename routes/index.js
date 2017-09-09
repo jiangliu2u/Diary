@@ -22,9 +22,6 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function (req, res) {//发表一篇日记
-    // if (User.find({username: req.body.username})) {
-    //     res.render('error');
-    // }
     if (req.body.content) {
         let date = new Date();
         const posts = {
@@ -40,8 +37,8 @@ router.post('/', function (req, res) {//发表一篇日记
             }
             res.redirect('/');
         });
-    }else {
-        req.flash('error','内容不能为空');
+    } else {
+        req.flash('error', '内容不能为空');
         res.redirect('/');
     }
 
