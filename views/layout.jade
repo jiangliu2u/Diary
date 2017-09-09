@@ -22,11 +22,5 @@ html
                         - else
                             li
                                 a(href='/logout') 退出
-        div#container.container
-            - if (success)
-                div.alert.alert-success
-                    p=success
-            - if (errorss)
-                div.alert.alert-danger
-                    p=errorss
-            block content
+
+        block content

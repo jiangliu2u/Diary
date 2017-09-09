@@ -49,7 +49,7 @@ app.use(function (req, res, next) {
     console.log("app.usr local");
     res.locals.user = req.session.user;
     res.locals.post = req.session.post;
-    res.locals.errorss = req.flash('error');
+    res.locals.error = req.flash('error');
     res.locals.success = req.flash('success');
     next();
 });
