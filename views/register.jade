@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div.container
+        div.row
+            form.form-horizontal(id="reg", method="post")
+                hr
+                div.form-group
+                    lable.col-lg-2.control-label 用户名
+                    div.col-lg-3
+                        input.form-control(id="username" name="username")
+                div.form-group
+                    label.col-lg-2.control-label 密码
+                    div.col-lg-3
+                        input.form-control(id="password" type="password" name="password")
+                div.form-group
+                    label.col-lg-2.control-label 再次输入密码
+                    div.col-lg-3
+                        input.form-control(id="password_again" type="password" name="password_again")
+                div.form-group
+                    div.col-lg-2
+                    div.col-lg-3
+                        button.btn.btn-default(type="submit") 注册
