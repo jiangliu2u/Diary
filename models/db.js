@@ -1,14 +1,14 @@
-var mongoose = require('mongoose');
-var DB_URL = 'mongodb://localhost:27017/dialog';
-var Promise = require('bluebird');
+let mongoose = require('mongoose');
+let DB_URL = 'mongodb://localhost:27017/dialog';
+let Promise = require('bluebird');
 /**
  * 连接
  */
-var userSchema = require('./User');
-var dialogSchema = require('./Dialog');
-var db = mongoose.connect(DB_URL, {useMongoClient: true,});
+let userSchema = require('./User');
+let dialogSchema = require('./Dialog');
+let db = mongoose.connect(DB_URL);
 
-var obj = {};
+let obj = {};
 
 obj.user = mongoose.model("User", userSchema);
 obj.dialog = mongoose.model("Dialog", dialogSchema);

@@ -1,7 +1,7 @@
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+let UserSchema = new Schema({
     username: {type: String},                    //用户
     password: {type: String}                       //密码
 });
